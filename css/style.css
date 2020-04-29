@@ -1,0 +1,24 @@
+body {
+    /* This is what makes the background image rescale based
+    on the container's size */
+    background-size: cover;
+    overflow: hidden;
+    background: -webkit-linear-gradient(rgba(29, 37, 113, 0.712), rgba(195, 193, 55, 0.658)), url(bibliotecas.png);
+    /* Background image is centered vertically and horizontally at all times */
+    background-position: center center;
+    /* Background image doesn't tile */
+    background-repeat: no-repeat;
+    /* Background image is fixed in the viewport so that it doesn't move when 
+    the content's height is greater than the image's height */
+    background-attachment: fixed;
+    /* This is what makes the background image rescale based
+    on the container's size */
+    background-size: cover;
+}
+
+/*.carousel-item img {
+    position: relative;
+    border: 40px rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.7);
+    background-clip: padding-box;
+}*/
