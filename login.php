@@ -56,7 +56,7 @@ $hoje = dataCompletaExtenso();
 </div>
     </div>
 </div> 
-</div>-->
+</div> -->
     <!-- card de login -->
     <div class="col-md-6">
     <div class="container">

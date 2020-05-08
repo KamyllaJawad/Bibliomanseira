@@ -20,7 +20,6 @@ if ($acao == "a" || $acao == "e") {
     $amigos['amiTelefone'] = 0;
 }
 
-
 if ($acao == "i") {
     $nome = "Inclusão de amigo";
     $etiqueta = "Incluir amigo";

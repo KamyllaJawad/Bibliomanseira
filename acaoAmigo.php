@@ -10,7 +10,7 @@
 	
 	if ($acao == "i")
 	{
-		$sql = "insert into amigos (amiCodigo, amiNome, amiEmail, amiTelefone) values ('$nome','$email','$telefone')";
+		$sql = "insert into amigos (amiNome, amiEmail, amiTelefone) values ('$nome','$email','$telefone')";
 		mysqli_query($conexao, $sql);
 	}
 	if ($acao == "a")
@@ -18,8 +18,8 @@
 		$sql = "update amigos set 
         amiNome  = '$nome', 
         amiEmail   = '$email', 
-        amiTelefone = '$telefone',
-					where amiCodigo = $codigo";
+        amiTelefone = '$telefone'
+				where amiCodigo = $codigo";
 		mysqli_query($conexao, $sql);
 	}
 	else if ($acao == "e")
