@@ -54,6 +54,41 @@ if ($acao == "i") {
 </head>
 
 <body>
+
+  <!-- Image and text -->
+  <nav class="navbar navbar-light bg-light">
+
+    <a class="navbar-brand" href="principal.php">
+      <img src="css/icon3.png" width="30" height="30" class="d-inline-block align-top" alt=""> Home</a>
+    <!-- Opções da Nav -->
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" href="listaLivros.php">Livros</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="listaGeneros.php">Gêneros</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="listaAmigos.php">Amigos</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Empréstimo</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="listaEmprestimos.php">Lista de Empréstimo</a>
+          <!-- <a class="dropdown-item" href="#">Solicitar</a>
+          <a class="dropdown-item" href="#">Autorizar empréstimo</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Devolver Livro</a> -->
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Sair</a>
+      </li>
+    </ul>
+  </nav>
+  <!-- Fim total da nav bar -->
+
+
     <h1>CRUD de amigos</h1>
     <h2><?php echo $nome ?></h2>
 

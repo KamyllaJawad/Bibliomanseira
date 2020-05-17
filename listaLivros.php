@@ -44,74 +44,80 @@ function buscarLivros($conexao)
 </head>
 
 <body>
+  <!-- Image and text -->
+  <nav class="navbar navbar-light bg-light">
 
-        <!-- Image and text -->
-<nav class="navbar navbar-light bg-light">
-    
     <a class="navbar-brand" href="principal.php">
       <img src="css/icon3.png" width="30" height="30" class="d-inline-block align-top" alt=""> Home</a>
-       <!-- Opções da Nav -->
-      <ul class="nav nav-tabs">
-    <li class="nav-item">
-      <a class="nav-link active" href="listaLivros.php">Livros</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="listaGeneros.php">Gêneros</a>
-    </li>
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Empréstimo</a>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Action</a>
-        <a class="dropdown-item" href="#">Another action</a>
-        <a class="dropdown-item" href="#">Something else here</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#">Separated link</a>
-      </div>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Sair</a>
-    </li>
-  </ul>
+    <!-- Opções da Nav -->
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" href="listaLivros.php">Livros</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="listaGeneros.php">Gêneros</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="listaAmigos.php">Amigos</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Empréstimo</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="listaEmprestimos.php">Lista de Empréstimo</a>
+          <!-- <a class="dropdown-item" href="#">Solicitar</a>
+          <a class="dropdown-item" href="#">Autorizar empréstimo</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Devolver Livro</a> -->
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Sair</a>
+      </li>
+    </ul>
   </nav>
-   <!-- Fim total da nav bar -->
+  <!-- Fim total da nav bar -->
+
 
   
   <h1 class="display-4">Bem vindo a sua biblioteca!</h1>
   <p class="lead">Abaixo você poderá ver sua lista completa de livros, podendo alterar, incluir ou excluir.</p>
   <p class="lead">Divirta-se e boa leitura!</p>
-  <a class="btn btn-info" role="button" href="formlivro.php?acao=i">Incluir livro</a>
+  <a class="btn btn-success" role="button" href="formlivro.php?acao=i">Incluir livro</a>
 
 
     <h1>Lista de Livros </h1>
 
 <br>
+<div class="table-responsive-sm">
+  <table class="table table-dark table-hover">
+    <thead>
+      <tr>
+        <th scope="col-md-2">Código</th>
+        <th scope="col">Título</th>
+        <th scope="col">Autor</th>
+        <th scope="col" colspan="2">Opções</th>
+      </tr>
+    </thead>
+      <tbody>
+        <tr>
+          <?php foreach ($listaLivros as $livro) : ?>
+                <tr>
+                    <th scope="row"><?php echo $livro['livCodigo']; ?></th>
+                    <td><?php echo $livro['livTitulo']; ?></td>
+                    <td><?php echo $livro['livAutor'];  ?></td>
+                    <td> <button type="button" class="btn btn-link"> <a href="formlivro.php?acao=a&cod=<?php echo $livro['livCodigo']; ?>">Alterar</a></button></td>
+                    <td><button type="button" class="btn btn-danger"> <a href="formlivro.php?acao=e&cod=<?php echo $livro['livCodigo']; ?>">Excluir</a></button></td>
 
-    <table class="table table-hover">
-  <thead>
-    <tr>
-      <th scope="col">Código</th>
-      <th scope="col">Título</th>
-      <th scope="col">Autor</th>
-      <th scope="col" colspan="2">Opções</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <?php foreach ($listaLivros as $livro) : ?>
-            <tr>
-                <th scope="row"><?php echo $livro['livCodigo']; ?></th>
-                <td><?php echo $livro['livTitulo']; ?></td>
-                <td><?php echo $livro['livAutor'];  ?></td>
-                <td> <a href="formlivro.php?acao=a&cod=<?php echo $livro['livCodigo']; ?>">Alterar</a></td>
-                <td> <a href="formlivro.php?acao=e&cod=<?php echo $livro['livCodigo']; ?>">Excluir</a></td>
+                </tr>
+            <?php endforeach; ?>
 
-            </tr>
-        <?php endforeach; ?>
+        </tr>
 
-    </tr>
+      </tbody>
+  </table>
+</div>
 
-  </tbody>
-</table>
+
 
 
     <!-- Optional JavaScript -->

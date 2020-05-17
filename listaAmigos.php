@@ -30,53 +30,58 @@ while ($amigos = mysqli_fetch_assoc($resultado)) {
 <body>
 
         <!-- Image and text -->
-<nav class="navbar navbar-light bg-light">
-    
+  <!-- Image and text -->
+  <nav class="navbar navbar-light bg-light">
+
     <a class="navbar-brand" href="principal.php">
       <img src="css/icon3.png" width="30" height="30" class="d-inline-block align-top" alt=""> Home</a>
-       <!-- Opções da Nav -->
-      <ul class="nav nav-tabs">
-    <li class="nav-item">
-      <a class="nav-link active" href="listaLivros.php">Livros</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="listaGeneros.php">Gêneros</a>
-    </li>
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Empréstimo</a>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Action</a>
-        <a class="dropdown-item" href="#">Another action</a>
-        <a class="dropdown-item" href="#">Something else here</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#">Separated link</a>
-      </div>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Sair</a>
-    </li>
-  </ul>
+    <!-- Opções da Nav -->
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" href="listaLivros.php">Livros</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="listaGeneros.php">Gêneros</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="listaAmigos.php">Amigos</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Empréstimo</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="listaEmprestimos.php">Lista de Empréstimo</a>
+          <!-- <a class="dropdown-item" href="#">Solicitar</a>
+          <a class="dropdown-item" href="#">Autorizar empréstimo</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Devolver Livro</a> -->
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Sair</a>
+      </li>
+    </ul>
   </nav>
-   <!-- Fim total da nav bar -->
+  <!-- Fim total da nav bar -->
+
 
   
   <h1 class="display-4">Bem vindo a seus amigos!</h1>
   <p class="lead">lorem ipsum</p>
   <p class="lead">lorem ipsum</p>
-  <a class="btn btn-info" role="button" href="formamigo.php?acao=i">Incluir amigo</a>
+  <a class="btn btn-success" role="button" href="formamigo.php?acao=i">Incluir amigo</a>
 
 
     <h1>Lista de Amigos </h1>
 
 <br>
 
-    <table >
+    <table class="table table-dark table-hover">
   <thead>
     <tr>
-      <th >Código</th>
-      <th>Nome</th>
-      <th>Email</th>
-      <th>Telefone</th>
+      <th scope="col-md-2">Código</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Email</th>
+      <th scope="col">Telefone</th>
       <th colspan="2">Opções</th>
     </tr>
   </thead>
@@ -88,8 +93,8 @@ while ($amigos = mysqli_fetch_assoc($resultado)) {
                 <td><?php echo $amigos['amiNome']; ?></td>
                 <td><?php echo $amigos['amiEmail'];  ?></td>
                 <td><?php echo $amigos['amiTelefone'];  ?></td>
-                <td><a href="formamigo.php?acao=a&cod=<?php echo $amigos['amiCodigo']; ?>">Alterar</a></td>
-                <td><a href="formamigo.php?acao=e&cod=<?php echo $amigos['amiCodigo']; ?>">Excluir</a></td>
+                <td><button type="button" class="btn btn-link"> <a href="formamigo.php?acao=a&cod=<?php echo $amigos['amiCodigo']; ?>">Alterar</a></button></td>
+                <td><button type="button" class="btn btn-danger"> <a href="formamigo.php?acao=e&cod=<?php echo $amigos['amiCodigo']; ?>">Excluir</a></button></td>
 
             </tr>
         <?php endforeach; ?>

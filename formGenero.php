@@ -47,6 +47,8 @@ if ($acao == "i") {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
+    
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <title>CRUD de Generos</title>
@@ -66,6 +68,40 @@ if ($acao == "i") {
 </head>
 
 <body>
+
+  <!-- Image and text -->
+  <nav class="navbar navbar-light bg-light">
+
+    <a class="navbar-brand" href="principal.php">
+      <img src="css/icon3.png" width="30" height="30" class="d-inline-block align-top" alt=""> Home</a>
+    <!-- Opções da Nav -->
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" href="listaLivros.php">Livros</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="listaGeneros.php">Gêneros</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="listaAmigos.php">Amigos</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Empréstimo</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="listaEmprestimos.php">Lista de Empréstimo</a>
+          <!-- <a class="dropdown-item" href="#">Solicitar</a>
+          <a class="dropdown-item" href="#">Autorizar empréstimo</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Devolver Livro</a> -->
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Sair</a>
+      </li>
+    </ul>
+  </nav>
+  <!-- Fim total da nav bar -->
+
     <h1>CRUD de Generos</h1>
     <h2><?php echo $titulo ?></h2>
 
