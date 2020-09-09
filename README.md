@@ -1,2 +1,2 @@
 # Bibliomanseira
-Biblioteca particular em andamento nas aulas de server side com o professor Paulo Rogerio Manseira
+Biblioteca particular criada nas aulas de server side com o professor Paulo Rogerio Manseira
